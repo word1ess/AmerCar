@@ -29,7 +29,43 @@
             </div>
             <div class="header__menu">
                 <nav class="header__links">
-                    <a href="#">Главная</a>
+                    <div class="dropdown-container">
+                        <div class="arrow"></div>
+                        <a href="#" class="header__link dropdown-toggle hover-dropdown">Главная</a>
+                        <ul class="header-down__menu dropdown-menu">
+                            <li class="header-down__link">
+                                <a href="#">Продукция</a>
+                                <ul class="header-down__submenu">
+                                    <li class="header__li">
+                                        <a href="#">Испытания</a>
+                                    </li>
+                                    <li class="header__li">
+                                        <a href="#">Испытания</a>
+                                    </li>
+                                    <li class="header__li">
+                                        <a href="#">Испытания</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="header-down__link">
+                                <a href="#">Оченб длинное название</a>
+                                <ul class="header-down__submenu">
+                                    <li class="header__li">
+                                        <a href="#">Испытания1</a>
+                                    </li>
+                                    <li class="header__li">
+                                        <a href="#">Испытания1</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Продукция</a>
+                            </li>
+                            <li>
+                                <a href="#">Продукция</a>
+                            </li>
+                        </ul>
+                    </div>
                     <a href="#">Цены</a>
                     <a href="#">Отзывы</a>
                     <a href="#">Фото работ</a>
@@ -256,7 +292,7 @@
                                     </p>
                                 </main>
                                 <footer class="rewiews__more">
-                                    <a href="#">Подробнее</a>
+                                    <button>Подробнее</button>
                                 </footer>
                             </article>
                             <article class="rewiews__rewiew">
@@ -281,7 +317,7 @@
                                     </p>
                                 </main>
                                 <footer class="rewiews__more">
-                                    <a href="#">Подробнее</a>
+                                    <button>Подробнее</button>
                                 </footer>
                             </article>
                             <article class="rewiews__rewiew">
@@ -306,7 +342,7 @@
                                     </p>
                                 </main>
                                 <footer class="rewiews__more">
-                                    <a href="#">Подробнее</a>
+                                    <button>Подробнее</button>
                                 </footer>
                             </article>
                             <article class="rewiews__rewiew">
@@ -331,7 +367,7 @@
                                     </p>
                                 </main>
                                 <footer class="rewiews__more">
-                                    <a href="#">Подробнее</a>
+                                    <button>Подробнее</button>
                                 </footer>
                             </article>
                         </div>
@@ -347,8 +383,8 @@
                                 </div>
                                 <p class="text white">Если вам нужна площадка для мероприятия, у нас большой выбор пространств под любые требования.</p>
                                 <div class="form-date__inputs">
-                                    <input type="date" placeholder="Дата и время">
-                                    <input type="tel" placeholder="Ваш телефон">
+                                    <input type="text" name="name" placeholder="Ваши ФИО">
+                                    <input type="tel" name="phone" placeholder="Ваш телефон">
                                 </div>
                                 <button type="submit" class="btn with-arrow">Подобрать площадку</button>
                             </form>
