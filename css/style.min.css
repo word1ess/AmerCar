@@ -218,6 +218,7 @@ h6 {
   font-size: 18px;
   font-weight: 400;
   text-transform: uppercase;
+  position: relative;
 }
 .header__phone * {
   color: #2b2a28;
@@ -231,6 +232,118 @@ h6 {
   font-size: 12px;
   font-weight: 400;
   margin: 0px;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-container .arrow,
+.dropdown-arrow,
+.subdropdown-arrow {
+  position: absolute;
+  width: 20px;
+  height: 24px;
+  right: -25px;
+  top: -3px;
+}
+.dropdown-container .arrow::after, .dropdown-container .arrow::before,
+.dropdown-arrow::after,
+.dropdown-arrow::before,
+.subdropdown-arrow::after,
+.subdropdown-arrow::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  background: #e31e25;
+  top: 10px;
+  transition: all 300ms ease;
+}
+.dropdown-container .arrow::after,
+.dropdown-arrow::after,
+.subdropdown-arrow::after {
+  rotate: -45deg;
+  right: 0px;
+}
+.dropdown-container .arrow::before,
+.dropdown-arrow::before,
+.subdropdown-arrow::before {
+  rotate: 45deg;
+  left: 0px;
+}
+
+.header-down__link a {
+  font-size: 14px;
+}
+
+.header__link__product.mobile {
+  display: none;
+}
+
+.header__btn.mobile {
+  display: none;
+}
+
+.header-down__menu,
+.header-down__submenu {
+  position: absolute;
+  display: none;
+  max-width: 269px;
+  width: 269px;
+}
+.header-down__menu li,
+.header-down__submenu li {
+  justify-content: flex-start;
+  color: #fff;
+  padding: 30px;
+  background: #e31e25;
+  transition: all 300ms ease;
+  text-align: left;
+  cursor: pointer;
+}
+.header-down__menu li:hover,
+.header-down__submenu li:hover {
+  background: #fff;
+}
+.header-down__menu li:hover a,
+.header-down__submenu li:hover a {
+  color: #e31e25;
+}
+.header-down__menu li a,
+.header-down__submenu li a {
+  font-size: 14px !important;
+  color: #fff;
+}
+.header-down__menu.active,
+.header-down__submenu.active {
+  display: block;
+}
+
+.header-down__menu {
+  padding-top: 56px;
+  top: 0px;
+  left: 0px;
+}
+.header-down__menu li {
+  position: relative;
+}
+
+.header-down__submenu {
+  top: -111px;
+  transform: translate(0px, 111px);
+  left: 268px;
+  position: absolute;
+}
+.header-down__submenu a {
+  color: #fff !important;
+}
+.header-down__submenu li:hover a {
+  color: #e31e25 !important;
+}
+
+.dropdown-container {
+  cursor: pointer;
 }
 
 h1,
@@ -366,6 +479,65 @@ p.white {
   margin: 0px;
 }
 
+.dialogbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.3);
+}
+.dialogbox__inner {
+  display: flex;
+  flex: 1 1 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  height: 100%;
+  width: 100%;
+}
+.dialogbox__window {
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 50px 50px 41px;
+  width: 100%;
+  max-width: 854px;
+  border-radius: 30px;
+  backdrop-filter: blur(13px) saturate(180%);
+  -webkit-backdrop-filter: blur(13px) saturate(180%);
+  background-color: rgba(228, 228, 228, 0.478);
+}
+.dialogbox__close {
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  z-index: 2;
+  top: 30px;
+  right: 32px;
+  width: 22px;
+  height: 22px;
+  background: center center no-repeat;
+  background-size: contain;
+  background-image: url(../img/svgicons/close.svg);
+  cursor: pointer;
+}
+.dialogbox__form h2 {
+  color: #fff;
+  margin: 0px 0px 30px;
+}
+.dialogbox__form .input {
+  display: block;
+  width: 100%;
+  margin: 0px 0px 13px;
+}
+.dialogbox__form .btn {
+  padding: 21px 60px;
+}
+
 .intro {
   background: center/cover no-repeat url("../img/intro/bg.png");
 }
@@ -468,17 +640,21 @@ p.white {
   height: 229px;
   margin: 0px 0px 32px;
 }
-.our-services__item a {
-  color: #2b2a28;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0px 0px 14px;
+.our-services__item:hover .our-services__name {
+  color: #e31e25;
 }
-.our-services__item p {
+.our-services p:last-child {
   flex: 1 1 auto;
   color: #909090;
   font-size: 16px;
   margin: 0px;
+}
+.our-services__name {
+  color: #2b2a28;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0px 0px 14px;
+  transition: all 300ms ease;
 }
 
 .rewiews .btn {
@@ -506,6 +682,12 @@ p.white {
   overflow: hidden;
   margin: 0px 0px 12px;
 }
+.rewiews__body.active {
+  max-height: fit-content;
+}
+.rewiews__body.active::after {
+  display: none;
+}
 .rewiews__body::after {
   content: "";
   position: absolute;
@@ -527,7 +709,7 @@ p.white {
   font-size: 15px;
   margin: 0px;
 }
-.rewiews__more a {
+.rewiews__more button {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -536,12 +718,17 @@ p.white {
   font-size: 13px;
   font-weight: 600;
   line-height: 105.465%; /* 13.71px */
+  background: none;
 }
-.rewiews__more a::after {
+.rewiews__more button::after {
   content: url("../img/svgicons/arrow-red.svg");
   display: block;
   height: 14px;
   width: 16px;
+  rotate: 90deg;
+}
+.rewiews__more button.active::after {
+  rotate: -90deg;
 }
 
 .form-date {
@@ -884,6 +1071,64 @@ body {
   }
 }
 @media only screen and (max-width: 992px) {
+  .dropdown-container .arrow {
+    display: none;
+  }
+  .dropdown-container {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+  }
+  .dropdown-arrow.active::after,
+  .subdropdown-arrow.active::after {
+    rotate: 45deg;
+  }
+  .dropdown-arrow.active::before,
+  .subdropdown-arrow.active::before {
+    rotate: -45deg;
+  }
+  .header-down__menu,
+  .header-down__submenu {
+    position: static;
+  }
+  .subdropdown-arrow {
+    top: 30px;
+    z-index: 2;
+  }
+  .header__list li {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .header-down__menu {
+    position: relative;
+    padding: 0px;
+    left: 0px;
+  }
+  .header-down__menu li,
+  .header-down__submenu li {
+    background: none;
+  }
+  .header-down__menu li a,
+  .header-down__submenu li a {
+    font-size: 16px;
+    color: #2b2a28 !important;
+  }
+  .header-down__submenu {
+    position: static;
+    transform: none;
+  }
+  .header-down__submenu li:last-child {
+    padding: 30px 30px 0px;
+  }
+  .header-down__menu li:hover,
+  .header-down__submenu li:hover {
+    background: none;
+  }
+  .header-down__submenu li {
+    font-size: 12px;
+  }
   .header__row {
     justify-content: space-between;
   }
